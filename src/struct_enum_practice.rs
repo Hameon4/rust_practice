@@ -1,3 +1,4 @@
+// Struct <start>
 struct Student {
     first_name: String,
     last_name: String,
@@ -5,6 +6,15 @@ struct Student {
     cgpa: f32 
 }
 
+impl Student {
+    fn print_info(&self) {
+        println!("Full name: {} {} || Academic Year: {} || CGPA: {}", self.first_name, self.last_name, self.academic_year, self.cgpa);
+    }
+}
+// Struct <end>
+
+
+// Enum <start>
 enum Operation {
     Multiply {a: i32, b: i32},
     Divide {a: i32, b: i32},
@@ -20,6 +30,7 @@ fn init_operation(op: Operation) {
         Operation::Add { a, b } => println!("{}", a + b),
     };
 }
+// Enum <end>
 
 pub fn run() {
     let stu = Student {
@@ -28,7 +39,7 @@ pub fn run() {
         academic_year: "Junior".to_string(), 
         cgpa: 3.51
     };
-    println!("Full name: {} {}\nAcademic Year: {}\nCGPA: {}", stu.first_name, stu.last_name, stu.academic_year, stu.cgpa);
+    stu.print_info();
 
     let a: i32 = 8;
     let b: i32 = 4;
